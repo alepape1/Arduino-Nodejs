@@ -1,0 +1,47 @@
+<html>
+
+
+<!-- <h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc('http://localhost:3000/covid')">Covid-19 Info</button>
+
+<p id="demo"></p>
+
+<button type="button" onclick="loadDoc('http://localhost:3000/temp')">Temp</button>
+
+<p id="demo"></p>
+
+<button type="button" onclick="loadDoc('http://localhost:3000/wind')">Wind</button>
+
+<p id="demo"></p> -->
+
+
+<head>
+  <meta name="author" content="www.twitter.com/cheeriottis">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a type="button" onclick="loadDoc('http://localhost:3000/smile')" class="action-button shadow animate blue">Smile face</a>
+  <a type="button" onclick="loadDoc('http://localhost:3000/covid')"class="action-button shadow animate red">Covid-19 Info</a>
+  <a type="button" onclick="loadDoc('http://localhost:3000/temp')" class="action-button shadow animate green">Temperature</a>
+  <a type="button" onclick="loadDoc('http://localhost:3000/wind')" class="action-button shadow animate yellow">Wind</a>
+
+
+
+<script>
+function loadDoc(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+</script>
+
+</body>
+</html>
